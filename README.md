@@ -22,16 +22,18 @@ docker build -t linux-course-image .
 
 ### Start the Containers
 
+Get the containers up in `detached` mode
+
 ```bash
 docker-compose up -d
 ```
 
 ### Navigate the Containers
 
-To get into a specific container
+To shell into a specific container
 
 ```bash
-docker exec -ti linux-course-image-1 /bin/bash
+docker exec -ti linux-course-image-<1/2/3> /bin/bash
 ```
 
 ## Cleanup
