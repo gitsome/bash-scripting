@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+    linux-course-image-1:
+        image: linux-course-image
+        build: .
+        environment:
+            COURSEVAR_NAME: "linux-course-image-1"
+    linux-course-image-2:
+        image: linux-course-image
+        build: .
+        environment:
+            COURSEVAR_NAME: "linux-course-image-2"
+    linux-course-image-3:
+        image: linux-course-image
+        build: .
+        environment:
+            COURSEVAR_NAME: "linux-course-image-3"
