@@ -2,17 +2,32 @@ version: '3.4'
 
 services:
     linux-course-image-1:
+        container_name: linux-course-image-1
         image: linux-course-image
         build: .
         environment:
             COURSEVAR_NAME: "linux-course-image-1"
+        volumes:
+            - ./machine-data/linux-course-image-1:/course-data
+        tty: true
+        stdin_open: true
     linux-course-image-2:
+        container_name: linux-course-image-2
         image: linux-course-image
         build: .
         environment:
             COURSEVAR_NAME: "linux-course-image-2"
+        volumes:
+             - ./machine-data/linux-course-image-2:/course-data
+        tty: true
+        stdin_open: true
     linux-course-image-3:
+        container_name: linux-course-image-3
         image: linux-course-image
         build: .
         environment:
             COURSEVAR_NAME: "linux-course-image-3"
+        volumes:
+            - ./machine-data/linux-course-image-3:/course-data
+        tty: true
+        stdin_open: true

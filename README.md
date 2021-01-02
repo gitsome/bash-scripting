@@ -4,7 +4,7 @@ All notes are based off this Udemy course:
 
 https://www.udemy.com/course/linux-shell-scripting-projects/learn/lecture/7997500#overview
 
-## Setting Up Docker ENV
+## Course ENV Setup
 
 Standing up multiple Linux nodes is important during networking aspects so using Docker and Docker Compose will allow for a quicks setup.
 
@@ -17,13 +17,29 @@ Standing up multiple Linux nodes is important during networking aspects so using
 From the root of this project 
 
 ```bash
-docker build -t linux-course-image
+docker build -t linux-course-image .
 ```
 
-### Start-Up the Containers
+### Start the Containers
 
 ```bash
-docker-compose up
+docker-compose up -d
+```
+
+### Navigate the Containers
+
+To get into a specific container
+
+```bash
+docker exec -ti linux-course-image-1 /bin/bash
+```
+
+## Cleanup
+
+Stop and remove all containers
+
+```bash
+docker-compose rm -fsv
 ```
 
 ## Course Notes
