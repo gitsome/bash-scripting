@@ -184,3 +184,7 @@ It's also possible to pass standard-in via a pipe. This means some commands allo
 ```bash
 echo $SOME_VAR | passwd --stdin ${USER_NAME}
 ```
+
+## Exercises
+
+[User friendly user creation script](./../machine-data/linux-course-image-1/add-local-user.sh)
