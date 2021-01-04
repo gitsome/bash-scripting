@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FILE=tempdata.txt
+FILE=/tmp/data
 
 echo "yayer" > $FILE
 
