@@ -18,7 +18,7 @@ useradd -c "${COMMENT}" -m ${USER_NAME}
 # Set the password for the user.
 # NOTE: You can also use the following command:
 #    echo "${USER_NAME}:${PASSWORD}" | chpasswd
-echo ${PASSWORD} | passwd --stdin ${USER_NAME}
+echo ${PASSWORD} | passwd --STDIN ${USER_NAME}
 
 # Force password change on first login.
 passwd -e ${USER_NAME}

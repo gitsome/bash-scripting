@@ -182,7 +182,7 @@ echo $INPUT_VAR
 It's also possible to pass standard-in via a pipe. This means some commands allow an override of typical keyboard entries using a pipe.
 
 ```bash
-echo $SOME_VAR | passwd --stdin ${USER_NAME}
+echo $SOME_VAR | passwd --STDIN ${USER_NAME}
 ```
 
 ## Exercises

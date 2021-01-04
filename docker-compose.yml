@@ -10,7 +10,7 @@ services:
         volumes:
             - ./machine-data/linux-course-image-1:/course-data
         tty: true
-        stdin_open: true
+        STDIN_open: true
     linux-course-image-2:
         container_name: linux-course-image-2
         image: linux-course-image
@@ -20,7 +20,7 @@ services:
         volumes:
              - ./machine-data/linux-course-image-2:/course-data
         tty: true
-        stdin_open: true
+        STDIN_open: true
     linux-course-image-3:
         container_name: linux-course-image-3
         image: linux-course-image
@@ -30,4 +30,4 @@ services:
         volumes:
             - ./machine-data/linux-course-image-3:/course-data
         tty: true
-        stdin_open: true
+        STDIN_open: true

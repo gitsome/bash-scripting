@@ -9,5 +9,5 @@ fi
 for U in carrief markh harrisonf alecg peterm
 do
   useradd ${U}
-  echo 'pass123' | passwd --stdin ${U}
+  echo 'pass123' | passwd --STDIN ${U}
 done

@@ -27,7 +27,7 @@ then
 fi
 
 # Set the password for the user
-echo ${USER_PASSWORD} | passwd –-stdin ${USER_NAME}
+echo ${USER_PASSWORD} | passwd –-STDIN ${USER_NAME}
 
 # Force password change on first login
 passwd -e $USER_NAME
