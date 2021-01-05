@@ -52,3 +52,4 @@ docker-compose rm -fsv
 - [Parsing Command Line Options](notes/PARSING_CLI_OPTIONS.md)
 - [Transforming Data / Data Processing / Reporting](notes/DATA_PROCESSING.md)
 - [Network Scripting & Automation of Distributed Systems](notes/NETWORKING.md)
+- [Anatomy of Command Line](notes/ANATOMY.md)

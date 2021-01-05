@@ -52,7 +52,9 @@ cat testfile # bar\nbaz
 
 ## Advanced Standard Input, Standard Output, and Standard Error PART II
 
-File descriptors are important. They represent STDIN(0), STDOUT(1), and STDERR(2)
+File descriptors are important. They represent STDIN(0), STDOUT(1), and STDERR(2).
+
+NOTE: The term file descriptor is also important as they are treated like files.
 
 ```bash
 read X < /etc/hosts
@@ -155,5 +157,33 @@ cat ERR_FILE
 # head: cannot open '/fakefile' for reading: No such file or directory
 ```
 
+### The NULL device or the `BitBucket`
 
+The NULL device device is designated `/dev/null`, it is a blackhole that swallows the redirected data.
 
+By default STDERR gets mapped to STDOUT inside the bash shell, so typically an error would show up in the terminal as STDOUT. But the command below hides the error:
+
+```bash
+head -n1 /etc/passwd /etc/hosts /fakefile 2> /dev/null
+# ==> /etc/passwd <==
+# root:x:0:0:root:/root:/bin/bash
+#
+# ==> /etc/hosts <==
+# 127.0.0.1	localhost
+```
+
+## Exercises
+
+### Goal
+
+The goal of this exercise is to create a shell script that adds users to the same Linux system as the script is executed on.  Additionally this script will conform to Linux program standard conventions.
+
+### Scenario
+
+The help desk team loves the script you created for them.  However, they have just one more request.  They want the script to only display the details that they need to send to the user after they create their account.
+
+You decide that's an easy enough change.  Because you know you'll have to use redirection to accomplish the task, you decide add redirection in other places in the script to make it conform to standard UNIX/Linux program conventions.  Namely, sending errors to STDERR.
+
+### Solution
+
+[User friendly user creation script with conventions](./../machine-data/linux-course-image-1/add-new-local-user-conventions.sh)

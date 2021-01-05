@@ -10,5 +10,9 @@ echo "The variable LINE: ${LINE}"
 
 # Redirect STDOUT to a file using FD 1, overwriting the file
 head -n3 /etc/passwd 1> ${FILE}
-echo "Contents of ${FILE}-------------->"
+echo "Contents of ${FILE}:"
 cat ${FILE}
+
+# Redirect STDIN to STDIN for read
+wc -l < "booyah you bro"
+echo "the results of STDOUT into STDIN ${X}"

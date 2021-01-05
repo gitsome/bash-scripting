@@ -27,7 +27,7 @@ then
 fi
 
 # Set the password for the user
-echo ${USER_PASSWORD} | passwd –-STDIN ${USER_NAME}
+echo "${USER_NAME}:${USER_PASSWORD}" | chpasswd
 
 # Force password change on first login
 passwd -e $USER_NAME
@@ -37,3 +37,6 @@ echo "-----SUCCESS-----"
 echo "Username: ${USER_NAME}"
 echo "Password: ${USER_PASSWORD}"
 echo "Hostname: $(hostname)" # you can also use the variable ${HOSTNAME} instead of the command
+
+# might as well be explicit about the exit value
+exit 0

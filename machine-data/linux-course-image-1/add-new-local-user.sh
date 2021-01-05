@@ -41,7 +41,7 @@ then
 fi
 
 # Set the password for the user
-echo ${USER_PASSWORD} | passwd –-STDIN ${USER_NAME}
+echo "${USER_NAME}:${USER_PASSWORD}" | chpasswd
 
 SET_PASSWORD_EXIT_STATUS=${?}
 if [[ $SET_PASSWORD_EXIT_STATUS -ne 0 ]]
