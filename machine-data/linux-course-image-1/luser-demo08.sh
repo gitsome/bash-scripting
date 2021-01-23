@@ -4,7 +4,7 @@ FILE=/tmp/data
 
 echo "yayer" > $FILE
 
-# redirect STDIN to a program, using FD 0
+# redirect STDIN to a program, using FD 0 ( File Descriptor 0 )
 read LINE 0< ${FILE}
 echo "The variable LINE: ${LINE}"
 

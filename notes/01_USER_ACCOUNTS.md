@@ -70,7 +70,7 @@ Variables are storage locations with a name. See [luser-demo01.sh](./../machine-
 
 Rules for variable names:
 
-- Can only consiste of letters, numbers, and the underscore
+- Can only consist of letters, numbers, and the underscore
 - Cannot start with a number
 
 Variable interpolation is only accessible using quotes!

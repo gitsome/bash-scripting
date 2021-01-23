@@ -46,10 +46,10 @@ docker-compose rm -fsv
 
 ## Course Notes
 
-- [User and Account Creation](notes/USER_ACCOUNTS.md)
-- [Password Generation and Shell Script Arguments](notes/PASSWORDS.md)
-- [Linux Programming Conventions](notes/CONVENTIONS.md)
-- [Parsing Command Line Options](notes/PARSING_CLI_OPTIONS.md)
-- [Transforming Data / Data Processing / Reporting](notes/DATA_PROCESSING.md)
-- [Network Scripting & Automation of Distributed Systems](notes/NETWORKING.md)
-- [Anatomy of Command Line](notes/ANATOMY.md)
+- [Quick Reference](notes/BASH_CRASH_COURSE.md)
+- [User and Account Creation](notes/01_USER_ACCOUNTS.md)
+- [Password Generation and Shell Script Arguments](notes/02_PASSWORDS.md)
+- [Linux Programming Conventions](notes/03_CONVENTIONS.md)
+- [Parsing Command Line Options](notes/04_PARSING_CLI_OPTIONS.md)
+- [Transforming Data / Data Processing / Reporting](notes/05_DATA_PROCESSING.md)
+- [Network Scripting & Automation of Distributed Systems](notes/06_NETWORKING.md)
