@@ -1,5 +1,11 @@
 # BASH CRASH COURSE
 
+## Syntax
+
+- Assignment with `=` means NO SPACES!!!  `A=5`
+- Conditionals require spaces between params and operators `[[ ${A} == 5 ]]`
+- Generally always use `${}` syntax to substitute a variable
+
 ## stdin / stdout / stderr
 
 The file descriptors used:

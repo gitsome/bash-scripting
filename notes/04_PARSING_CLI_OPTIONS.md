@@ -246,7 +246,6 @@ gunzip course-data.tar.gz
 # resutls in course-data.tar
 ```
 
-
 There is also a shortcut during the archiving by adding the `-z` option to the `tar` command. Note that you have to specify the final extension of `.gz` yourself. 
 
 NOTE: There is a convention of using this command and just giving it the `.tgz` exension to indicate it is a gzipped archive.
@@ -265,5 +264,18 @@ tar -zx -f ../course-data.tgz
 
 Be careful with `tar` as it will happily overwrite files. If you extract with `tar` in a directory, the extracted directory will overwrite any existing directoy with the same name!
 
+Operating system GUIS will generally create a new directory and prompt you to change the name etc.
 
+#### Locking People out Of Accounts
 
+1. `sudo passwd -l $USERNAME`
+2. `chage -E 0 $USERNAME`
+3. `sudo usermod -s /sbin/nologin $USERNAME`
+
+All of these will restrict access to some degree, however option #2 is the best. Using the `chage` command will preven the user from authenticating both with their password and SSH. While the `usermod` comman will also restrict for interactive SSH, it will not prevent things like portforwarding.
+
+In order to allow the user access again use this command:
+
+```bash
+chage -E -1 $USERNAME
+```
