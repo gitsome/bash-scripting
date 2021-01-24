@@ -86,8 +86,10 @@ for USER_NAME in ${@}; do
 
             mkdir -p ${USER_ARCHIVE_DIR}
 
-            tar -zcv -f "${USER_ARCHIVE_DIR}/${USER_NAME}.${USER_ID}.trg" "/home/${USER_NAME}"
-            ARCHIVE_EXIT_CODE=$?
+            ARCHIVE_FILE="${USER_ARCHIVE_DIR}/${USER_NAME}.${USER_ID}.trg"
+
+            tar -zc -f ${ARCHIVE_FILE} "/home/${USER_NAME}" &> /dev/null
+            ARCHIVE_EXIT_CODE=${?}
             
             if [[ ${ARCHIVE_EXIT_CODE} -ne 0 ]]; then
                 echo "Unable to archive home directory for user ${USER_NAME}" >&2
@@ -103,7 +105,7 @@ for USER_NAME in ${@}; do
                 
                 # delete the user account and DELETE their home directory
                 userdel -r ${USER_NAME}
-                USER_DELETE_REMOVE_HOME_EXIT_CODE=$?
+                USER_DELETE_REMOVE_HOME_EXIT_CODE=${?}
 
                 if [[ ${USER_DELETE_REMOVE_HOME_EXIT_CODE} -eq 0 ]]; then
                     USER_ACTIONS+=("DELETED")
@@ -116,7 +118,7 @@ for USER_NAME in ${@}; do
 
                 # delete the user account but KEEP their home directory
                 userdel ${USER_NAME}
-                USER_DELETE_EXIT_CODE=$?
+                USER_DELETE_EXIT_CODE=${?}
 
                 if [[ ${USER_DELETE_EXIT_CODE} -eq 0 ]]; then
                     USER_ACTIONS+=("DELETED")
@@ -129,7 +131,7 @@ for USER_NAME in ${@}; do
 
             # expire the account
             chage -E 0 $USER_NAME
-            USER_EXPIRED_EXIT_CODE=$?
+            USER_EXPIRED_EXIT_CODE=${?}
 
             if [[ ${USER_EXPIRED_EXIT_CODE} -eq 0 ]]; then
                 USER_ACTIONS+=("DISABLED")
